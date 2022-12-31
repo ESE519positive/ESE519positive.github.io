@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "clocks.h": "c",
+        "compare": "c",
+        "type_traits": "c"
+    }
+}

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild.rule"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/CMakeFiles/PioasmBuild-complete.rule"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-build.rule"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure.rule"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-download.rule"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-install.rule"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-mkdir.rule"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-patch.rule"
+		},
+		{
+			"file" : "D:/app/519/pico/CocktailMaker/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"PioasmBuild"
+		],
+		"name" : "PioasmBuild"
+	}
+}

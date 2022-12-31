@@ -1,0 +1,25 @@
+part4\CMakeFiles\motor.dir\D_\app\519\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp.obj: \
+ D:\app\519\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\c++\12.2.0\cstdlib \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\c++\12.2.0\arm-none-eabi\thumb\v6-m\nofp\bits\c++config.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\c++\12.2.0\arm-none-eabi\thumb\v6-m\nofp\bits\os_defines.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\c++\12.2.0\arm-none-eabi\thumb\v6-m\nofp\bits\cpu_defines.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\c++\12.2.0\pstl\pstl_config.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\stdlib.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\machine\ieeefp.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\_ansi.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\newlib.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\_newlib_version.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\sys\config.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\sys\features.h \
+ d:\app\519\1213fb~1.2mp\lib\gcc\arm-none-eabi\12.2.0\include\stddef.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\sys\reent.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\_ansi.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\sys\_types.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\machine\_types.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\machine\_default_types.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\sys\lock.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\sys\cdefs.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\machine\stdlib.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\alloca.h \
+ d:\app\519\1213fb~1.2mp\arm-none-eabi\include\c++\12.2.0\bits\std_abs.h
