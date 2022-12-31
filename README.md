@@ -28,25 +28,27 @@ We started our project with developing RP2040, ESP32 and motors individually and
 
 For mechanical devices, the biggest problem we met is that if we used one motor to control the angle of rotation to control which drink cup the pipe enters, the pipe cannot be pulled down successfully. After we tried two times, we decided to use three pumps to achieve our purpose.
 
-The feasibility of the mechanical part is one of the major challenges we face. We tried three different designs. In the beginning, we used RP2040 to control two motors shown in the following figures.![image](https://user-images.githubusercontent.com/84935719/210157432-065b76b3-890c-44c8-b7ff-39015acbfd71.png)
+The feasibility of the mechanical part is one of the major challenges we face. We tried three different designs. In the beginning, we used RP2040 to control two motors shown in the following figures.
 
-In an ideal state, we can put down the pipe and pull up the pipe through the rotation of motor I, and control the direction of the water pipe through the rotation of motor II. In the original idea, if we need to mix three kinds of wine, the trigger sequence of each device is shown in the figure below.![image](https://user-images.githubusercontent.com/84935719/210157435-6aeaab34-a860-4322-8284-a9763eea5498.png)
+In an ideal state, we can put down the pipe and pull up the pipe through the rotation of motor I, and control the direction of the water pipe through the rotation of motor II. In the original idea, if we need to mix three kinds of wine, the trigger sequence of each device is shown in the figure below.
 
-However, when we installed the simple mechanics and tested the code, we found that the water pipe did not drop smoothly. Many methods were used but could not alleviate the situation that the water pipe would bend (as shown in the yellow boxed area in the figure, the water pipe was bent so it could not be lowered).![image](https://user-images.githubusercontent.com/84935719/210157437-a21f032c-f438-45df-a8ed-92486547934d.png)
+However, when we installed the simple mechanics and tested the code, we found that the water pipe did not drop smoothly. Many methods were used but could not alleviate the situation that the water pipe would bend (as shown in the yellow boxed area in the figure, the water pipe was bent so it could not be lowered).
 
-After discussing with the mechanical students, they suggested adding limits and forces when lowering and pulling up the pipe. In this case, our second design was using friction wheels to replace Motor I. The design structure shows in the following figure.![image](https://user-images.githubusercontent.com/84935719/210157442-0eca75c0-6c5e-4a96-88f5-be395c068a9a.png)
+After discussing with the mechanical students, they suggested adding limits and forces when lowering and pulling up the pipe. In this case, our second design was using friction wheels to replace Motor I. The design structure shows in the following figure.
 
 The pipe was clamped between two wheels. We used L298N to control Motor A and Motor B. The pipe was put down when Motor A rotates clockwise and Motor B rotates counterclockwise. The pipe was pulled up when Motor A rotates counterclockwise and Motor B rotates clockwise. Motor II was still used to control the pipe direction. In this design, wheels give the limit and the force to pull up or put down the pipe. Compared to the first design, this design has improved a lot, but there is still the case that the water pipe will bend in the red box area sometimes.
 
-![image](https://user-images.githubusercontent.com/84935719/210157447-bdce42e9-35d7-4bc8-93c8-c0f35ef6a2d5.png)
+To ensure its stability, we finally adopted the design of three pumps to divide the wine suction instead of a complex mechanical structure. We used RP2040 to control 3 pumps. The circuit diagram shows in the following figure. RP2040 can control the pump by sending the signal to the gate electrode of 2N222a. The details will introduce in the next section.
 
-To ensure its stability, we finally adopted the design of three pumps to divide the wine suction instead of a complex mechanical structure. We used RP2040 to control 3 pumps. The circuit diagram shows in the following figure. RP2040 can control the pump by sending the signal to the gate electrode of 2N222a. The details will introduce in the next section.![image](https://user-images.githubusercontent.com/84935719/210157449-be757fee-9920-4f67-973c-6e854415cd25.png)
+## Reflections
 
-
+The praiseworthy part  is the simple and efficient pump control part. We take use of the characteristics of the N-type transistor and use the RP2040's GPIO to its gate input signal. When the GPIO outputs a high voltage, the transistor conducts and the circuit where the pump is located is the pathway. 
 
 ## Satisfying details
 
 The most satisfying part of the project was the wifi control module. We were very successful in implementing voice input commands, which were transmitted to the RP2040 via ESP32, and then the motor and pump started working. We achieved this process accurately and clearly. Users can observe the progress of making drinks through the LCD display.
+
+Triggering the water pump in this way is very simple and easy to operate, and the success of the final demonstration proves the stability of this method. But it also has disadvantages, for example, we found that when running the circuit for a long time. The transistor will get hot. In future improvements, we consider using different transistors to test their heat level.
 
 ## Team overview
 
