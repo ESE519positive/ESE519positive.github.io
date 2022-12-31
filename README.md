@@ -40,9 +40,10 @@ https://github.com/ZhijingY
 
 Siyun Wang :
 
-linkedin.com/in/siyun-wang-8442a6253
+https://www.linkedin.com/in/siyun-wang-8442a6253/
 
 https://github.com/Phoebe-www
+
 Wenxi Wei : 
 
 Demo
