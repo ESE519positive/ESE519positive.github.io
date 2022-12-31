@@ -1,8 +1,8 @@
-####Overview of Project
+## Overview of Project
 
 The purpose of our project is to build an automatic cocktail machine that can produce correct drinks according to the voice command from users. When the machine is available, the LCD screen displays “ready for drink”. At this stage, users can choose which drink to be made by talking to google assistant on the phone, then the machine will start making the drink with the LCD screen displaying the drink information. When the drink is done, the LCD screen goes back to “ready for drink”.
 
-####Project Instructions 
+## Project Instructions 
 
 Our project is composed of two microcontrollers: RP2040 and ESP32 Feather, three electric motors, one LCD screen and a 3D printed model. The diagram of the overall operation is shown here. ESP32 receives the voice command from users and send their choice to RP2040 through GPIO. To realize this functionality, the ThingSpeak IoT platform and IFTTT service are used. IFTTT is for receiving the voice command and post the information on the IoT server, then ESP32 will read the drink selection from the server.
 
@@ -20,19 +20,19 @@ An LCD screen is used and connected to ESP32. The commands are transferred via S
 
 The assembly details are stated here. Firstly, the SPI pins of ESP32 are connected to the SPI pins of LCD screen. Three GPIO pins of ESP32 are directly connected three GPIO pins of RP2040 for sending the decision of drink. The power wires of motors are directly connected to the 12V power supply, and the ground wires are connected to the emitter of BJT. The collector of BJT is connected to ground, and the base is connected to the corresponding GPIO pin of RP2040 that is set when a specific motor is expected to operate. 
 
-Narrative Overview
+## Narrative Overview
 
 We started our project with developing RP2040, ESP32 and motors individually and simultaneously. 
 
-Troubleshooting
+## Troubleshooting
 
 For mechanical devices, the biggest problem we met is that if we used one motor to control the angle of rotation to control which drink cup the pipe enters, the pipe cannot be pulled down successfully. After we tried two times, we decided to use three pumps to achieve our purpose.
 
-Satisfying details
+## Satisfying details
 
 The most satisfying part of the project was the wifi control module. We were very successful in implementing voice input commands, which were transmitted to the RP2040 via ESP32, and then the motor and pump started working. We achieved this process accurately and clearly. Users can observe the progress of making drinks through the LCD display.
 
-Team overview
+## Team overview
 
 Zhijing Yao :
 
