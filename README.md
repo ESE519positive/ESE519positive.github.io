@@ -25,8 +25,25 @@ Narrative Overview
 We started our project with developing RP2040, ESP32 and motors individually and simultaneously. 
 
 Troubleshooting
+
 For mechanical devices, the biggest problem we met is that if we used one motor to control the angle of rotation to control which drink cup the pipe enters, the pipe cannot be pulled down successfully. After we tried two times, we decided to use three pumps to achieve our purpose.
 
+Satisfying details
+
+The most satisfying part of the project was the wifi control module. We were very successful in implementing voice input commands, which were transmitted to the RP2040 via ESP32, and then the motor and pump started working. We achieved this process accurately and clearly. Users can observe the progress of making drinks through the LCD display.
+
+Team overview
+
+Zhijing Yao :
+
+https://github.com/ZhijingY
+
+Siyun Wang :
+
+linkedin.com/in/siyun-wang-8442a6253
+
+https://github.com/Phoebe-www
+Wenxi Wei : 
 
 Demo
 https://youtu.be/BPBAF2OwBS8
