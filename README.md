@@ -4,7 +4,7 @@ The purpose of our project is to build an automatic cocktail machine that can pr
 
 ## Project Instructions 
 
-Our project is composed of two microcontrollers: RP2040 and ESP32 Feather, three electric motors, one LCD screen and a 3D printed model. The diagram of the overall operation is shown here. ESP32 receives the voice command from users and send their choice to RP2040 through GPIO. To realize this functionality, the ThingSpeak IoT platform and IFTTT service are used. IFTTT is for receiving the voice command and post the information on the IoT server, then ESP32 will read the drink selection from the server.
+Our project is composed of two microcontrollers: RP2040 and ESP32 Feather, three electric pumps, one LCD screen and a 3D printed model. The diagram of the overall operation is shown here. ESP32 receives the voice command from users and send their choice to RP2040 through GPIO. To realize this functionality, the ThingSpeak IoT platform and IFTTT service are used. IFTTT is for receiving the voice command and post the information on the IoT server, then ESP32 will read the drink selection from the server.
 
 ThingSpeak acts as the server. You can simply sign up with your email address for free, and create a channel by. Name one field as “sensor state” and enable it. Since we will read information from channel using ESP32, we need to use the Read API key as shown here to read data.
 
@@ -12,17 +12,17 @@ IFTTT stands for “If This Then That”. It is a free web-based service to crea
 
 Now we are ready to code for ESP32, which is responsible for reading the data on ThingSpeak, sending the information to RP2040 and modifying the content displaying on the LCD screen. Micropython is used to realize the functionality. For the ESP32 to access IoT server, it needs to connect to WiFi. Once it’s connected to WiFi, it reads the data on ThingSpeak channel and send out the information by enabling and setting the corresponding GPIO pin. Besides, the content of LCD screen is also changed accordingly. The code with comments can be found here.
 
-RP2040 receives the information form ESP32 via GPIO. The operation of RP2040 is written in C. There is a state machine constructed in the code, and RP2040 will enter different states based on the information it receives and actions it has already taken. As shown in the code, there are 3 states: IDLE, DRAW, END. When the drink is decided, the three motors will be activated via GPIO in order, for a specific time set by the code to make the correct drink.
+RP2040 receives the information form ESP32 via GPIO. The operation of RP2040 is written in C. There is a state machine constructed in the code, and RP2040 will enter different states based on the information it receives and actions it has already taken. As shown in the code, there are 3 states: IDLE, DRAW, END. When the drink is decided, the three pumps will be activated via GPIO in order, for a specific time set by the code to make the correct drink.
 
-The three motors we used are … motor bought from Amazon. They require 12V DC and produce around 12W power. 
+The three pumps we used are peristaltic pumps [bought from Amazon](https://www.amazon.com/gp/product/B09MVPJXFJ/ref=ppx_yo_dt_b_asin_image_o02_s00?ie=UTF8&psc=1). They require 12V DC and produce around 12W power. 
 
 An LCD screen is used and connected to ESP32. The commands are transferred via SPI.
 
-The assembly details are stated here. Firstly, the SPI pins of ESP32 are connected to the SPI pins of LCD screen. Three GPIO pins of ESP32 are directly connected three GPIO pins of RP2040 for sending the decision of drink. The power wires of motors are directly connected to the 12V power supply, and the ground wires are connected to the emitter of BJT. The collector of BJT is connected to ground, and the base is connected to the corresponding GPIO pin of RP2040 that is set when a specific motor is expected to operate. 
+The assembly details are stated here. Firstly, the SPI pins of ESP32 are connected to the SPI pins of LCD screen. Three GPIO pins of ESP32 are directly connected three GPIO pins of RP2040 for sending the decision of drink. The power wires of pumps are directly connected to the 12V power supply, and the ground wires are connected to the emitter of BJT. The collector of BJT is connected to ground, and the base is connected to the corresponding GPIO pin of RP2040 that is set when a specific pump is expected to operate. 
 
 ## Narrative Overview
 
-We started our project with developing RP2040, ESP32 and motors individually and simultaneously. 
+We started our project with developing RP2040, ESP32 and pumps individually and simultaneously. 
 
 ## Troubleshooting
 
