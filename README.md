@@ -24,7 +24,24 @@ The assembly details are stated here. Firstly, the I2C pins of ESP32 are connect
 
 ## Narrative Overview
 
-We started our project with developing RP2040, ESP32 and pumps individually and simultaneously. For RP2040, at the beginning we started from constructing the frame of state machine for controlling the actions of pumps. The original code looked almost the same as 
+We started our project with developing RP2040, ESP32 and pumps individually and simultaneously. For RP2040, at the beginning we started from constructing the frame of state machine for controlling the actions of pumps. The original code looked almost the same as the final version, but without the specific sleep time of the program for waiting the pumps to finish operating.
+
+For ESP32, the completion of code started from WiFi connection. After verifying the functionality of WiFi, we added the feature of reading from the IoT platform, and adjusted the sleep time to make it compatible with real-time operation. One instance of this adjustment is shown as below:
+
+            elif(status == 'Phoebe'):
+                if(order == 1) :
+                    green_led.value(0)
+                    red_led.value(1)
+                    yellow_led.value(0)
+                    LCD.clear()
+                    LCD.puts("Current status:")
+                    LCD.puts("    Phoebe", 0, 1)
+                    sleep_ms(4000)
+                    LCD.clear()
+                    LCD.puts("Preparing drink")
+                    LCD.puts("    Phoebe", 0, 1)
+                else :
+                    urequests.get(url = 'https://api.thingspeak.com/update?api_key=6M9XOWZ408MD81G3&field1=check')
 
 ## Troubleshooting
 
