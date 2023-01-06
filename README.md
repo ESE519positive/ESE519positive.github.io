@@ -32,9 +32,13 @@ For mechanical devices, the biggest problem we met is that if we used one motor 
 
 The feasibility of the mechanical part is one of the major challenges we face. We tried three different designs. In the beginning, we used RP2040 to control two motors shown in the following figures.
 
+
 <p>
+
     <img src="https://github.com/ESE519positive/ESE519positive.github.io/blob/main/Troubleshooting/Picture1.png" width="220" height="240" />
+    
 </p>
+
 
 ![image](https://github.com/ESE519positive/ESE519positive.github.io/blob/main/Troubleshooting/Picture1.png)
 
