@@ -65,7 +65,7 @@ The praiseworthy part is the simple and efficient pump control part. We take use
 
 ## Explanation of PIO
 
-In our code on RP2040, we used PIO functioning as GPIO. 
+In our code on RP2040, we used PIO functioning as GPIO. We were planning to utilize PIO to realize I2C, but soon we figured that it would be better to let MicroPython handle the I2C communication between the board and LCD screen. As the main functionalities of our project are primarily achieved via GPIO, we decided to apply PIO for toggling the pins. We used PIO state machine to change the status of the GPIO pins for controlling the motors.
 
 ## Satisfying details
 
