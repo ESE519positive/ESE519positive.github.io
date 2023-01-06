@@ -52,7 +52,7 @@ To ensure its stability, we finally adopted the design of three pumps to divide 
 
 ## Reflections
 
-The praiseworthy part  is the simple and efficient pump control part. We take use of the characteristics of the N-type transistor and use the RP2040's GPIO to its gate input signal. When the GPIO outputs a high voltage, the transistor conducts and the circuit where the pump is located is the pathway. 
+The praiseworthy part is the simple and efficient pump control part. We take use of the characteristics of the N-type transistor and use the RP2040's GPIO to its gate input signal. When the GPIO outputs a high voltage, the transistor conducts and the circuit where the pump is located is the pathway. 
 
 ## Satisfying details
 
