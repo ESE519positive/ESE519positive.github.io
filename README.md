@@ -42,6 +42,8 @@ For ESP32, the completion of code started from WiFi connection. After verifying 
                     LCD.puts("    Phoebe", 0, 1)
                 else :
                     urequests.get(url = 'https://api.thingspeak.com/update?api_key=6M9XOWZ408MD81G3&field1=check')
+                    
+The \code{ss} here is to ensure that the system has enough time to process the drink request without calling for the same action for multiple times.
 
 ## Troubleshooting
 
