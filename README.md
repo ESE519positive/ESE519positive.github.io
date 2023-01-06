@@ -32,6 +32,10 @@ For mechanical devices, the biggest problem we met is that if we used one motor 
 
 The feasibility of the mechanical part is one of the major challenges we face. We tried three different designs. In the beginning, we used RP2040 to control two motors shown in the following figures.
 
+<p>
+    <img src="https://github.com/ESE519positive/ESE519positive.github.io/blob/main/Troubleshooting/Picture1.png" width="220" height="240" />
+</p>
+
 ![image](https://github.com/ESE519positive/ESE519positive.github.io/blob/main/Troubleshooting/Picture1.png)
 
 In an ideal state, we can put down the pipe and pull up the pipe through the rotation of motor I, and control the direction of the water pipe through the rotation of motor II. In the original idea, if we need to mix three kinds of wine, the trigger sequence of each device is shown in the figure below.
