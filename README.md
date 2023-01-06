@@ -34,7 +34,7 @@ The feasibility of the mechanical part is one of the major challenges we face. W
 
 
 <p>
-    <img src="/Troubleshooting/Picture1.png" width="220" height="240" />
+    <img src="/Troubleshooting/Picture1.png"/>
 </p>
 
 
