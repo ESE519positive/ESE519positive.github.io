@@ -54,6 +54,10 @@ To ensure its stability, we finally adopted the design of three pumps to divide 
 
 The praiseworthy part is the simple and efficient pump control part. We take use of the characteristics of the N-type transistor and use the RP2040's GPIO to its gate input signal. When the GPIO outputs a high voltage, the transistor conducts and the circuit where the pump is located is the pathway. 
 
+## Explanation of PIO
+
+In our code on RP2040, we used PIO functioning as GPIO. 
+
 ## Satisfying details
 
 The most satisfying part of the project was the wifi control module. We were very successful in implementing voice input commands, which were transmitted to the RP2040 via ESP32, and then the motor and pump started working. We achieved this process accurately and clearly. Users can observe the progress of making drinks through the LCD display.
@@ -73,6 +77,7 @@ https://www.linkedin.com/in/siyun-wang-8442a6253/
 https://github.com/Phoebe-www
 
 Wenxi Wei : 
+
 https://github.com/wenxiwei00/
 
 ## Demo
