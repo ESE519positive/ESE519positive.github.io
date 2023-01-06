@@ -34,7 +34,7 @@ The feasibility of the mechanical part is one of the major challenges we face. W
 
 
 <p>
-    <img src="https://github.com/ESE519positive/ESE519positive.github.io/blob/76145b63203aa92bb6d2303ee2945ff309b78354/Troubleshooting/Picture1.png" width="220" height="240" />
+    <img src="/Troubleshooting/Picture1.png" width="220" height="240" />
 </p>
 
 
