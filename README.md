@@ -43,7 +43,7 @@ For ESP32, the completion of code started from WiFi connection. After verifying 
                 else :
                     urequests.get(url = 'https://api.thingspeak.com/update?api_key=6M9XOWZ408MD81G3&field1=check')
                     
-The `sleep_ms(4000)` here is to ensure that the system has enough time to process the drink request without calling for the same action for multiple times.
+The `sleep_ms(4000)` here is to ensure that the system has enough time to process the drink request without calling for the same action for multiple times. After verifying the functionality of WiFi and IoT interaction, we finally added the logic of sending commands via GPIO signals.
 
 ## Troubleshooting
 
