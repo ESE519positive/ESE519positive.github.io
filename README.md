@@ -24,7 +24,7 @@ The assembly details are stated here. Firstly, the I2C pins of ESP32 are connect
 
 ## Narrative Overview
 
-We started our project with developing RP2040, ESP32 and pumps individually and simultaneously. 
+We started our project with developing RP2040, ESP32 and pumps individually and simultaneously. For RP2040, at the beginning we started from constructing the frame of state machine for controlling the actions of pumps. The original code looked almost the same as 
 
 ## Troubleshooting
 
