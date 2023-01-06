@@ -18,9 +18,9 @@ RP2040 receives the information form ESP32 via GPIO. The operation of RP2040 is 
 
 The three pumps we used are peristaltic pumps [bought from Amazon](https://www.amazon.com/gp/product/B09MVPJXFJ/ref=ppx_yo_dt_b_asin_image_o02_s00?ie=UTF8&psc=1). They require 12V DC and produce around 12W power. 
 
-An LCD screen is used and connected to ESP32. The commands are transferred via SPI.
+An LCD screen is used and connected to ESP32. The commands are transferred via I2C.
 
-The assembly details are stated here. Firstly, the SPI pins of ESP32 are connected to the SPI pins of LCD screen. Three GPIO pins of ESP32 are directly connected three GPIO pins of RP2040 for sending the decision of drink. The power wires of pumps are directly connected to the 12V power supply, and the ground wires are connected to the emitter of BJT. The collector of BJT is connected to ground, and the base is connected to the corresponding GPIO pin of RP2040 that is set when a specific pump is expected to operate. 
+The assembly details are stated here. Firstly, the I2C pins of ESP32 are connected to the I2C pins of LCD screen. Three GPIO pins of ESP32 are directly connected three GPIO pins of RP2040 for sending the decision of drink. The power wires of pumps are directly connected to the 12V power supply, and the ground wires are connected to the emitter of BJT. The collector of BJT is connected to ground, and the base is connected to the corresponding GPIO pin of RP2040 that is set when a specific pump is expected to operate. 
 
 ## Narrative Overview
 
