@@ -45,6 +45,16 @@ For ESP32, the completion of code started from WiFi connection. After verifying 
                     
 The `sleep_ms(4000)` here is to ensure that the system has enough time to process the drink request without calling for the same action for multiple times. After verifying the functionality of WiFi and IoT interaction, we finally added the logic of sending commands via GPIO signals.
 
+For the pump part, we tried three different designs. Our first design uses two motors and a pump to achieve the mixing of different types of wine drawn from different bottles. The physical picture is shown in the next section (Troubleshooting part).
+![design 1 circuit diagram](https://user-images.githubusercontent.com/114196821/211119673-d1ffc6bf-e8c2-43eb-9cd9-99aa2d4c6451.png)
+
+The first solution did not achieve the function we wanted perfectly, and after optimization, we replaced the servo motor with two dc motors. Two friction wheels were installed on top of the dc motors. The function is achieved by the structure of two friction wheels, one servo motor, and one pump. (The physical drawing is shown in part Troubleshooting).
+![design 2 circuit diagram](https://user-images.githubusercontent.com/114196821/211119798-15951bc3-44c4-4488-b2c4-a86b6fa9c8ad.png)
+
+After the physical installation, we found that the complex mechanical structure did not achieve the desired effect. So we used three pumps instead of the original mechanical part. This time the design is efficient and stable.
+![design 3 circuit diagram](https://user-images.githubusercontent.com/114196821/211119890-dfb4766b-9f0c-4326-b3e9-ec85a790f542.png)
+
+
 ## Troubleshooting
 
 For mechanical devices, the biggest problem we met is that if we used one motor to control the angle of rotation to control which drink cup the pipe enters, the pipe cannot be pulled down successfully. After we tried two times, we decided to use three pumps to achieve our purpose.
