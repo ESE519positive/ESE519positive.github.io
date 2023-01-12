@@ -131,6 +131,8 @@ At beginning, we were trying to program on ESP32 in C with Arduino IDE. However,
             Serial.println(totalInterruptCounter);
             }
             }
+            
+Running the WiFi portion individually would not result in any problems, but with back-end interruption the system will restart randomly, along with reconnection of WiFi and non-stoping warnings. We tried to fix the error but eventually we gave up and chose to implement the functionality in Python, as that was a more efficient and reliable approach. We met no problem with Python.
 
 ## Mechanical Issue
 
