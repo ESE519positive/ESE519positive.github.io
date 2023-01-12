@@ -192,18 +192,18 @@ Triggering the water pump in this way is very simple and easy to operate, and th
 
 Zhijing Yao :
 
-https://github.com/ZhijingY
+[https://github.com/ZhijingY](https://github.com/ZhijingY)
 
 Siyun Wang :
 
-https://www.linkedin.com/in/siyun-wang-8442a6253/
+[https://www.linkedin.com/in/siyun-wang-8442a6253/](https://www.linkedin.com/in/siyun-wang-8442a6253/)
 
-https://github.com/Phoebe-www
+[https://github.com/Phoebe-www](https://github.com/Phoebe-www)
 
 Wenxi Wei : 
 
-https://github.com/wenxiwei00/
+[https://github.com/wenxiwei00/](https://github.com/wenxiwei00/)
 
 # Demo
 
-https://youtu.be/BPBAF2OwBS8
+[https://youtu.be/BPBAF2OwBS8](https://youtu.be/BPBAF2OwBS8)
