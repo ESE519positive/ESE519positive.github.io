@@ -6,7 +6,14 @@ The purpose of our project is to build an automatic cocktail machine that can pr
 
 Our project is composed of two microcontrollers: RP2040 and ESP32 Feather, three electric pumps, one LCD screen and a 3D printed model. The diagram of the overall operation is shown here. ESP32 receives the voice command from users and send their choice to RP2040 through GPIO. To realize this functionality, the ThingSpeak IoT platform and IFTTT service are used. IFTTT is for receiving the voice command and post the information on the IoT server, then ESP32 will read the drink selection from the server.
 
-ThingSpeak acts as the server. You can simply sign up with your email address for free, and create a channel by. Name one field as “sensor state” and enable it. Since we will read information from channel using ESP32, we need to use the Read API key as shown here to read data.
+ThingSpeak acts as the server. You can simply sign up with your email address for free, and create a channel by. Name one field as “sensor state” and enable it. Example of result is shown below:
+
+
+<p>
+    <img src="/Instruction/ThingSpeak1.png"/>
+</p>
+
+Since we will read information from channel using ESP32, we need to use the Read API key as shown here to read data.
 
 IFTTT stands for “If This Then That”. It is a free web-based service to create chains of simple conditional statements called applets. With IFTTT, we can trigger an event when a condition is met. Firstly, you need to download IFTTT on your phone and sign up using your email address, then you can start creating applets. They will be similar applets and serving for one purpose: receiving the voice command and uploading the information onto a server. To create an IFTTT applet, you pick a trigger then an action, respectively corresponding to “If This” and “Then That”. In this project we choose Google Assistant as our trigger. Download Google Assistant on your phone and sign in with your gmail. On IFTTT, use Google Assistant as the trigger and set the gradient as the drink name, [as shown here](https://github.com/ESE519positive/ESE519positive.github.io/blob/main/Instruction/pic2.png). Then, use Webhooks as the action, use the Write API Key provided on ThingSpeak to upload the drink name. The configuration is [shown as this](https://github.com/ESE519positive/ESE519positive.github.io/blob/main/Instruction/pic1.png).
 
