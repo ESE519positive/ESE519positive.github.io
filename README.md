@@ -2,6 +2,14 @@
 
 The purpose of our project is to build an automatic cocktail machine that can produce correct drinks according to the voice command from users. When the machine is available, the LCD screen displays “ready for drink”. At this stage, users can choose which drink to be made by talking to google assistant on the phone, then the machine will start making the drink with the LCD screen displaying the drink information. When the drink is done, the LCD screen goes back to “ready for drink”.
 
+# List of Main Components
+
+Adafruit ESP32 Feather Board: [https://www.adafruit.com/product/3405](https://www.adafruit.com/product/3405)
+
+RP2040: [https://www.adafruit.com/product/4864?gclid=Cj0KCQiA_P6dBhD1ARIsAAGI7HDB3bS81QrAcRroHiH9zoDsJJwLUQOmEJi_CEaD2tX1yZLWML5zlCQaAgJTEALw_wcB](https://www.adafruit.com/product/4864?gclid=Cj0KCQiA_P6dBhD1ARIsAAGI7HDB3bS81QrAcRroHiH9zoDsJJwLUQOmEJi_CEaD2tX1yZLWML5zlCQaAgJTEALw_wcB)
+
+Peristaltic Pumps [https://www.amazon.com/gp/product/B09MVPJXFJ/ref=ppx_yo_dt_b_asin_image_o02_s00?ie=UTF8&psc=1](https://www.amazon.com/gp/product/B09MVPJXFJ/ref=ppx_yo_dt_b_asin_image_o02_s00?ie=UTF8&psc=1)
+
 # Project Instructions 
 
 Our project is composed of two microcontrollers: RP2040 and ESP32 Feather, three electric pumps, one LCD screen and a 3D printed model. The diagram of the overall operation is shown here. ESP32 receives the voice command from users and send their choice to RP2040 through GPIO. To realize this functionality, the ThingSpeak IoT platform and IFTTT service are used. IFTTT is for receiving the voice command and post the information on the IoT server, then ESP32 will read the drink selection from the server.
