@@ -2,7 +2,7 @@
 
 The purpose of our project is to build an automatic cocktail machine that can produce correct drinks according to the voice command from users. When the machine is available, the LCD screen displays “ready for drink”. At this stage, users can choose which drink to be made by talking to google assistant on the phone, then the machine will start making the drink with the LCD screen displaying the drink information. When the drink is done, the LCD screen goes back to “ready for drink”.
 
-#### Project Instructions 
+# Project Instructions 
 
 Our project is composed of two microcontrollers: RP2040 and ESP32 Feather, three electric pumps, one LCD screen and a 3D printed model. The diagram of the overall operation is shown here. ESP32 receives the voice command from users and send their choice to RP2040 through GPIO. To realize this functionality, the ThingSpeak IoT platform and IFTTT service are used. IFTTT is for receiving the voice command and post the information on the IoT server, then ESP32 will read the drink selection from the server.
 
@@ -22,7 +22,7 @@ An LCD screen is used and connected to ESP32. The commands are transferred via I
 
 The assembly details are stated here. Firstly, the I2C pins of ESP32 are connected to the I2C pins of LCD screen. Three GPIO pins of ESP32 are directly connected three GPIO pins of RP2040 for sending the decision of drink. The power wires of pumps are directly connected to the 12V power supply, and the ground wires are connected to the emitter of BJT. The collector of BJT is connected to ground, and the base is connected to the corresponding GPIO pin of RP2040 that is set when a specific pump is expected to operate. 
 
-#### Narrative Overview
+# Narrative Overview
 
 We started our project with developing RP2040, ESP32 and pumps individually and simultaneously. For RP2040, at the beginning we started from constructing the frame of state machine for controlling the actions of pumps. The original code looked almost the same as the final version, but without the specific sleep time of the program for waiting the pumps to finish operating.
 
@@ -63,7 +63,76 @@ After the physical installation, we found that the complex mechanical structure 
     <img src="/Troubleshooting/pic33.png"/>
 </p>
 
-#### Troubleshooting
+# Troubleshooting
+
+## Software Issue
+
+At beginning, we were trying to program on ESP32 in C with Arduino IDE. However, adding the functionality of interrupt while trying to connect to WiFi resulted in corruption of program. The code is shown as below:
+
+            #include "WiFi.h"
+
+            const char* ssid = "...";
+            const char* password =  "...";
+
+            volatile int interruptCounter = 0;
+            int totalInterruptCounter = 0;
+
+            hw_timer_t * timer = NULL;
+            portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
+
+            void IRAM_ATTR onTimer() {
+            portENTER_CRITICAL_ISR(&timerMux);
+            interruptCounter++;
+            Serial.println("Interrupt done");
+            portEXIT_CRITICAL_ISR(&timerMux);
+ 
+            }
+
+            void connectToNetwork() {
+             WiFi.begin(ssid, password);
+ 
+            while (WiFi.status() != WL_CONNECTED) {
+            delay(1000);
+            Serial.println("Establishing connection to WiFi..");
+            }
+ 
+            Serial.println("Connected to network");
+ 
+            }
+
+            void setup() {
+            Serial.begin(115200);
+            // Set WiFi to station mode and disconnect from an AP if it was previously connected
+            if (WiFi.status() != WL_CONNECTED) {
+            WiFi.mode(WIFI_STA);
+            WiFi.disconnect();
+            delay(100);
+            connectToNetwork();
+            Serial.println(WiFi.localIP());
+            Serial.println("Setup done");
+            }
+
+            timer = timerBegin(0, 80, true);
+            timerAttachInterrupt(timer, &onTimer, true);
+            timerAlarmWrite(timer, 5000000, true);
+            timerAlarmEnable(timer);
+            }
+
+            void loop() {
+            if (interruptCounter > 0) {
+ 
+            portENTER_CRITICAL(&timerMux);
+            interruptCounter--;
+            portEXIT_CRITICAL(&timerMux);
+ 
+            totalInterruptCounter++;
+ 
+            Serial.print("An interrupt as occurred. Total number: ");
+            Serial.println(totalInterruptCounter);
+            }
+            }
+
+## Mechanical Issue
 
 For mechanical devices, the biggest problem we met is that if we used one motor to control the angle of rotation to control which drink cup the pipe enters, the pipe cannot be pulled down successfully. After we tried two times, we decided to use three pumps to achieve our purpose.
 
@@ -96,21 +165,21 @@ To ensure its stability, we finally adopted the design of three pumps to divide 
     <img src="/Troubleshooting/Picture4.png"/>
 </p>
 
-#### Reflections
+# Reflections
 
 The praiseworthy part is the simple and efficient pump control part. We take use of the characteristics of the N-type transistor and use the RP2040's GPIO to its gate input signal. When the GPIO outputs a high voltage, the transistor conducts and the circuit where the pump is located is the pathway. 
 
-#### Explanation of PIO
+# Explanation of PIO
 
 In our code on RP2040, we used PIO functioning as GPIO. We were planning to utilize PIO to realize I2C, but soon we figured that it would be better to let MicroPython handle the I2C communication between the board and LCD screen. As the main functionalities of our project are primarily achieved via GPIO, we decided to apply PIO for toggling the pins. We used PIO state machine to change the status of the GPIO pins for controlling the motors.
 
-#### Satisfying details
+# Satisfying details
 
 The most satisfying part of the project was the wifi control module. We were very successful in implementing voice input commands, which were transmitted to the RP2040 via ESP32, and then the motor and pump started working. We achieved this process accurately and clearly. Users can observe the progress of making drinks through the LCD display.
 
 Triggering the water pump in this way is very simple and easy to operate, and the success of the final demonstration proves the stability of this method. But it also has disadvantages, for example, we found that when running the circuit for a long time. The transistor will get hot. In future improvements, we consider using different transistors to test their heat level.
 
-#### Team overview
+# Team overview
 
 Zhijing Yao :
 
@@ -126,6 +195,6 @@ Wenxi Wei :
 
 https://github.com/wenxiwei00/
 
-#### Demo
+# Demo
 
 https://youtu.be/BPBAF2OwBS8
