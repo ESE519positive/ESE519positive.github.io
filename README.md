@@ -10,7 +10,7 @@ ThingSpeak acts as the server. You can simply sign up with your email address fo
 
 
 <p>
-    <img src="/Instruction/ThingSpeak1.png" width="700" height="400"/>
+    <img src="/Instruction/ThingSpeak1.png" width="600" height="450"/>
 </p>
 
 Since we will read information from channel using ESP32, we need to use the Read API key as shown here to read data.
