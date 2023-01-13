@@ -9,6 +9,16 @@
 #include "pico/stdlib.h"
 #include <math.h>
 
+#include <string.h>
+#include "pico/binary_info.h"
+#include "pico/multicore.h"
+
+#include "ws2812.h"
+#include "hardware/clocks.h"
+#include "ws2812.pio.h"
+#include "registers.h"
+
+
 #include "pico/stdlib.h" // standard c librarry from pico
 #include "hardware/pio.h" // chip specific library
 #include "hardware/clocks.h" // chip specific library
@@ -49,6 +59,14 @@ static void APDS9960_reset() {
     // There are a load more options to set up the device in different ways that could be added here
     uint8_t buf[] = {0x80, 0x27};
     pio_i2c_write_blocking(pio, sm, addr, buf, 2, false);
+}
+
+void rp_init() {
+    stdio_init_all();
+    PIO pio = pio0;
+    int sm = 0;
+    uint offset = pio_add_program(pio, &ws2812_program);
+    ws2812_program_init(pio, sm, offset, WS2812_PIN, 800000, IS_RGBW);
 }
 
 static void receive_command(uint8_t *command) {
@@ -97,6 +115,7 @@ void main_core1() {
 int main() {
 
     stdio_init_all();
+    rp_init();
 /*
     uint offset = pio_add_program(pio, &i2c_program);
     i2c_program_init(pio, sm, offset, SDA_PIN, SCL_PIN);
