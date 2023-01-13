@@ -31,7 +31,13 @@ IFTTT stands for “If This Then That”. It is a free web-based service to crea
     <img src="/Instruction/pic2.png" width="300" height="600"/>
 </p>
 
-Then, use Webhooks as the action, use the Write API Key provided on ThingSpeak to upload the drink name. The configuration is shown as this:
+Then, use Webhooks as the action, use the Write API Key provided on ThingSpeak to upload the drink name. The write/read API keys can be found under the "API Keys" tab, as shown below:
+
+<p>
+    <img src="/Instruction/thingspeak.png" width="300" height="600"/>
+</p>
+
+The configuration is shown as this:
 
 <p>
     <img src="/Instruction/pic1.png" width="300" height="600"/>
