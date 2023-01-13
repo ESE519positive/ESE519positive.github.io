@@ -53,20 +53,20 @@ struct Drinks {
    int ingredient[3];
 };
 
-/*
-static void APDS9960_reset() {
-    // Two byte reset. First byte register, second byte data
-    // There are a load more options to set up the device in different ways that could be added here
-    uint8_t buf[] = {0x80, 0x27};
-    pio_i2c_write_blocking(pio, sm, addr, buf, 2, false);
-}
-
 void rp_init() {
     stdio_init_all();
     PIO pio = pio0;
     int sm = 0;
     uint offset = pio_add_program(pio, &ws2812_program);
     ws2812_program_init(pio, sm, offset, WS2812_PIN, 800000, IS_RGBW);
+}
+
+/*
+static void APDS9960_reset() {
+    // Two byte reset. First byte register, second byte data
+    // There are a load more options to set up the device in different ways that could be added here
+    uint8_t buf[] = {0x80, 0x27};
+    pio_i2c_write_blocking(pio, sm, addr, buf, 2, false);
 }
 
 static void receive_command(uint8_t *command) {
