@@ -70,6 +70,14 @@ static void receive_command(uint8_t *command) {
 }
 */
 
+void rp_init() {
+    stdio_init_all();
+    PIO pio = pio0;
+    int sm = 0;
+    uint offset = pio_add_program(pio, &ws2812_program);
+    ws2812_program_init(pio, sm, offset, WS2812_PIN, 800000, IS_RGBW);
+}
+
 void make_drink(int amount, int material) {
     // Keep the pump on for a amount of time
     uint pin = 0;
@@ -97,6 +105,7 @@ void main_core1() {
 int main() {
 
     stdio_init_all();
+    rp_init();
 /*
     uint offset = pio_add_program(pio, &i2c_program);
     i2c_program_init(pio, sm, offset, SDA_PIN, SCL_PIN);
