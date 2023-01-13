@@ -202,6 +202,18 @@ The praiseworthy part is the simple and efficient pump control part. We take use
 
 In our code on RP2040, we used PIO functioning as GPIO. We were planning to utilize PIO to realize I2C, but soon we figured that it would be better to let MicroPython handle the I2C communication between the board and LCD screen. As the main functionalities of our project are primarily achieved via GPIO, we decided to apply PIO for toggling the pins. We used PIO state machine to change the status of the GPIO pins for controlling the motors.
 
+In our function main(), we called rp_init() and the definition is shown below:
+
+    void rp_init() {
+        stdio_init_all();
+        PIO pio = pio0;
+        int sm = 0;
+        uint offset = pio_add_program(pio, &ws2812_program);
+        ws2812_program_init(pio, sm, offset, WS2812_PIN, 800000, IS_RGBW);
+    }
+    
+In this implementation of PIO, we created a PIO state machine for configuring the GPIO.
+
 # Satisfying details
 
 The most satisfying part of the project was the wifi control module. We were very successful in implementing voice input commands, which were transmitted to the RP2040 via ESP32, and then the motor and pump started working. We achieved this process accurately and clearly. Users can observe the progress of making drinks through the LCD display.
