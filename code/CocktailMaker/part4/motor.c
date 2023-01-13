@@ -30,7 +30,7 @@ const uint DRAW_PIN_3 = 3;
 
 const uint DRINK_PIN_1 = 6; // Phoebe
 const uint DRINK_PIN_2 = 7; // Positive
-const uint DRINK_PIN_3 = 8; // Hello world
+const uint DRINK_PIN_3 = 9; // Hello world
 
 /*
 const uint SDA_PIN = 22;
