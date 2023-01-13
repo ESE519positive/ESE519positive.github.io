@@ -90,6 +90,18 @@ After the physical installation, we found that the complex mechanical structure 
     <img src="/Troubleshooting/pic33.png"/>
 </p>
 
+We used 3D printing and laser cutting to build our packaging. We started from 3D modeling. The modeling image and final design are shown as below:
+
+<p>
+    <img src="/Narrative/3d1.png"/>
+</p>
+
+From the rare view and side view, we can see the three-pump design clearly.
+
+<p>
+    <img src="/Narrative/3d2.png"/>
+</p>
+
 # Troubleshooting
 
 ## Software Issue
