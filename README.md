@@ -34,7 +34,7 @@ IFTTT stands for “If This Then That”. It is a free web-based service to crea
 Then, use Webhooks as the action, use the Write API Key provided on ThingSpeak to upload the drink name. The write/read API keys can be found under the "API Keys" tab, as shown below:
 
 <p>
-    <img src="/Instruction/thingspeak.png" width="600" height="500"/>
+    <img src="/Instruction/thingspeak.png" width="550" height="500"/>
 </p>
 
 The configuration is shown as this:
