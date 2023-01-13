@@ -3,7 +3,7 @@
 The purpose of our project is to build an automatic cocktail machine that can produce correct drinks according to the voice command from users. When the machine is available, the LCD screen displays “ready for drink”. At this stage, users can choose which drink to be made by talking to google assistant on the phone, then the machine will start making the drink with the LCD screen displaying the drink information. When the drink is done, the LCD screen goes back to “ready for drink”. The overview of working flow is shown as below:
 
 <p>
-    <img src="/Overview/flowchart.png" width="600" height="550"/>
+    <img src="/Overview/flowchart.png" width="600" height="450"/>
 </p>
 
 # List of Main Components
