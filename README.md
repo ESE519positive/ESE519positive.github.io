@@ -3,7 +3,7 @@
 The purpose of our project is to build an automatic cocktail machine that can produce correct drinks according to the voice command from users. When the machine is available, the LCD screen displays “ready for drink”. At this stage, users can choose which drink to be made by talking to google assistant on the phone, then the machine will start making the drink with the LCD screen displaying the drink information. When the drink is done, the LCD screen goes back to “ready for drink”. The overview of working flow is shown as below:
 
 <p>
-    <img src="/Overview/flowchart.png" width="600" height="450"/>
+    <img src="/Overview/flowchart.png" width="600" height="400"/>
 </p>
 
 # List of Main Components
@@ -58,6 +58,12 @@ The three pumps we used are peristaltic pumps [bought from Amazon](https://www.a
 An LCD screen is used and connected to ESP32. The commands are transferred via I2C.
 
 The assembly details are stated here. Firstly, the I2C pins of ESP32 are connected to the I2C pins of LCD screen. Three GPIO pins of ESP32 are directly connected three GPIO pins of RP2040 for sending the decision of drink. The power wires of pumps are directly connected to the 12V power supply, and the ground wires are connected to the emitter of BJT. The collector of BJT is connected to ground, and the base is connected to the corresponding GPIO pin of RP2040 that is set when a specific pump is expected to operate. 
+
+The illustration of the connection between components is shown here. As we can see, LCD screen with drive attached is connected to the ESP32 board via I2C, and ESP32 communicates with RP2040 via 3 GPIO pins.
+
+<p>
+    <img src="/Instruction/connection.png" width="550" height="600"/>
+</p>
 
 # Narrative Overview
 
